@@ -1,28 +1,24 @@
 import React from 'react';
+import NavMenu from './nav-menu';
 
 class Navbar extends React.Component{ //ES6
 	render(){
+		
 		let menu = [
 			{titulo:'Home', link:'#home'},
+			{titulo:'categorias', link:'#categorias'},
 			{titulo:'Sobre', link:'#sobre'},
 			{titulo:'Contato', link:'#contato'}
 		];
 
-		let lista = menu.map(function(value,i){
-			return(
-				<li key={value.titulo}><a href={value.link + i}>{value.titulo}</a></li>
-			);
-		}); 
-
 		let color = 'nav-wrapper ' + this.props.navcolor;
+
 		return(
 		<nav>
 				<div className={color}>
 					<div className="container">
 						<a href="#" className="brand-logo">{this.props.titulo}</a>
-						<ul id="nav-mobile" className="right">
-							{lista}
-						</ul>
+						<NavMenu menulist={menu} />
 					</div>
 				</div>
 			</nav>
