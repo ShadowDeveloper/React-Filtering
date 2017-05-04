@@ -13,7 +13,7 @@ let App = (
     <Navbar titulo="React Logo" navcolor="blue" />
     <div className="container">
       <Titulo />
-      <ListCards />
+      <ListCards qtdPerLine="4" colSize="3" />
     </div>
   </div>
 );
