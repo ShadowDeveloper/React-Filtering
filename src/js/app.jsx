@@ -1,9 +1,11 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
+// Components
 import Titulo from './titulo/titulo';
 import Navbar from './navbar/navbar';
-import Cartao from './cartao/cartao';
+import ListCards from './cartao/lista-cartao';
+
 
 
 let App = (
@@ -11,11 +13,7 @@ let App = (
     <Navbar titulo="React Logo" navcolor="blue" />
     <div className="container">
       <Titulo />
-      <div className="row">
-        <div className="col m4">
-          <Cartao />
-        </div>
-      </div>
+      <ListCards />
     </div>
   </div>
 );
