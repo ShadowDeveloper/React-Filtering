@@ -1,4 +1,5 @@
 import React from 'react';
+import ListCards from './lista-cartao';
 
 class Cartao extends React.Component{
   render(){
@@ -18,6 +19,7 @@ class Cartao extends React.Component{
           <span className="card-title grey-text text-darken-4">Sobre<i className="material-icons right">Fechar</i></span>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio perspiciatis natus ex sunt dolorem voluptatibus impedit.</p>
         </div>
+        <ListCards />
       </div>
     );
   }

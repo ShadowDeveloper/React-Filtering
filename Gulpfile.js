@@ -1,15 +1,12 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var reactEasy = require('gulp-react-easy');
-var browserSync = require('browser-sync').create();
 
+gulp.task('default',['js','w']);
 
-gulp.task('default',['js','w','browser-sync']);
-
-gulp.task('w', function(done) {
-  gulp.watch('./src/js/**/*',['js']).on('change', browserSync.reload);
-  gulp.watch("./*.html").on('change', browserSync.reload);
-  done();
+gulp.task('w', function() {
+  gulp.watch('./src/js/**/*',['js']);
+  gulp.watch("./*.html");
 });
 
 gulp.task('js', function() {
