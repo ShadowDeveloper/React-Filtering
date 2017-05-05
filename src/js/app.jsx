@@ -10,7 +10,7 @@ import ListCards from './cartao/lista-cartao';
 
 let App = (
   <div>
-    <Navbar titulo="React Logo" navcolor="blue" />
+    <Navbar titulo="React Logo" navcolor="teal" />
     <div className="container">
       <Titulo />
       <ListCards qtdPerLine="4" colSize="3" />
