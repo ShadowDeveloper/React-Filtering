@@ -17,12 +17,3 @@ gulp.task('js', function() {
     .to('app.js')
     .pipe(gulp.dest('./dist/js/'));
 });
-
-// Static server
-gulp.task('browser-sync', function() {
-    browserSync.init({
-        server: {
-            baseDir: "./"
-        }
-    });
-});
