@@ -12,7 +12,7 @@ let App = (
   <div>
     <Navbar titulo="React Logo" navcolor="teal" />
     <div className="container">
-      <Titulo />
+      <Titulo miliseconds="50" />
       <ListCards qtdPerLine="4" colSize="3" />
     </div>
   </div>

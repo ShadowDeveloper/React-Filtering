@@ -10,7 +10,7 @@ class Titulo extends React.Component{
   componentDidMount(){
     this.horaID = setInterval(
       ()=> this.atualizarSegundos(),
-      1000
+      this.props.miliseconds
     );
   }
 
