@@ -1,8 +1,34 @@
 import React from 'react';
 import Cartao from './cartao';
+import Busca from '../busca/busca';
 
 
 class ListCards extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicks: 0,
+      search:''
+    };
+    this.addClick = this.addClick.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  addClick() {
+    // this.setState({ clicks: this.state.clicks + 1 });
+    this.setState( // React documentation recomendation
+      (prevState) => ({
+        clicks: prevState.clicks + 1
+      })
+    );
+    console.log("ok");
+  }
+
+  updateSearch(event){
+    this.setState({search: event.target.value});
+  }
+
   render() {
     let noticias = [
       { titulo: 'Title 1', descricao: 'Descricao 1', detalhe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi alias omnis nisi consectetur, cum harum ad sed vero magni repellendus, incidunt accusantium laboriosam officiis numquam molestias distinctio, nesciunt, facere quo!', imagem: 'http://materializecss.com/images/office.jpg', link: '#teste' },
@@ -16,7 +42,7 @@ class ListCards extends React.Component {
 
     let aux = [];
     let novalista = [];
-    
+
     for (let k = 0; k < noticias.length; k++) {
       aux.push(noticias[k]);
       if (aux.length == this.props.qtdPerline) {
@@ -27,29 +53,32 @@ class ListCards extends React.Component {
       }
     }
 
-    let columnSize = "col m" + this.props.colSize; 
+    let columnSize = "col m" + this.props.colSize;
 
-    let listOfCards = function(group){
-      return group.map(function(items,i){
+    let listOfCards = function (group, self) {
+      return group.map(function (items, i) {
         return (
           <div key={i} className={columnSize}>
-            <Cartao dados={items}/>
+            <Cartao dados={items} propClick={self.addClick} />
           </div>
         );
       });
 
     };
 
-    let line = novalista.map(function (group,i) {
+    let self = this;
+    let line = novalista.map(function (group, i) {
       return (
         <div key={i} className="row">
-          {listOfCards(group)}
+          {listOfCards(group, self)}
         </div>
       );
     });
 
     return (
       <div>
+        <Busca updateSearch = {this.updateSearch} busca = {this.state.search}/>
+        <p>Quantidade de clicks: {this.state.clicks}</p>
         {line}
       </div>
     );

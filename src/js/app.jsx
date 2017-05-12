@@ -6,7 +6,6 @@ import Titulo from './titulo/titulo';
 import Navbar from './navbar/navbar';
 import ListCards from './cartao/lista-cartao';
 
-
 let App = (
   <div>
     <Navbar titulo="React Logo" navcolor="teal" />
