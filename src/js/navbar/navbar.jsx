@@ -1,15 +1,30 @@
 import React from 'react';
+import axios from 'axios';
 import NavMenu from './nav-menu';
 
 class Navbar extends React.Component{ //ES6
+	
+	constructor(props){
+		super(props);
+		this.state = {menu:[]}
+	}
+	
+	componentDidMount() {
+
+		let self = this;
+		axios.get('http://localhost:8080/servidor.php?menu=1').then(function(response){
+			console.log(response.data);
+			self.setState({
+				menu: response.data
+			})
+		});
+
+	}
+
+
 	render(){
 		
-		let menu = [
-			{titulo:'Home', link:'#home'},
-			{titulo:'categorias', link:'#categorias'},
-			{titulo:'Sobre', link:'#sobre'},
-			{titulo:'Contato', link:'#contato'}
-		];
+		let menu = this.state.menu;
 
 		let color = 'nav-wrapper ' + this.props.navcolor;
 

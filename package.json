@@ -13,6 +13,7 @@
   "author": "Rodrigo Souza (ShadowDeveloper)",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.16.1",
     "express": "^4.15.3",
     "gulp": "^3.9.1",
     "gulp-react-easy": "^0.1.9",
