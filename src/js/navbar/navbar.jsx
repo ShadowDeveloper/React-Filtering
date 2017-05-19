@@ -10,7 +10,6 @@ class Navbar extends React.Component{ //ES6
 	}
 	
 	componentDidMount() {
-
 		let self = this;
 		axios.get('http://localhost:8080/servidor.php?menu=1').then(function(response){
 			console.log(response.data);
@@ -18,7 +17,6 @@ class Navbar extends React.Component{ //ES6
 				menu: response.data
 			})
 		});
-
 	}
 
 
